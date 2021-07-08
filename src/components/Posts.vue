@@ -6,9 +6,9 @@
         </Slide> -->
         <b-container>
             <b-row>
-                <p>
-                    <span>Announcement {{title}}</span>
-                    <span></span>
+                <p class="d-flex justify-content-between align-items-center">
+                    <span class="primary h4 m-0">Announcement</span>
+                    <span>View all <b-icon class="primary h4 m-0 ms-1" icon="plus-circle-fill"></b-icon></span>
                 </p>
                 <div class="col-lg-7 npr">
                     <div class="slider primarybg"> 

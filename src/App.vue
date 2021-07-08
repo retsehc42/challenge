@@ -17,7 +17,12 @@ export default {
 
 <style lang="scss"> 
   $primary: #386EFF; 
-
+  h1 {
+    padding: 60px 0;
+    font: {
+      weight: bold;
+    }
+  }
   #app { 
     background: #EFF4FF;
     padding: {
@@ -48,5 +53,8 @@ export default {
   .justify-between {
     justify-content: space-between;
   }
-  
+  .icon-pep {
+    width: 35px;
+    height: 35px;
+  }
 </style>

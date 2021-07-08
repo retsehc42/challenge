@@ -16,6 +16,13 @@
         <modal name="addpost" :adaptive="true" :clickToClose="true" height="auto" :scrollable="true" >
              <div id="post-modal">
                  <h2 class="primary h4">Create post</h2>
+                 <div class="d-flex profile-name">
+                     <img src="http://placebeard.it/640/480" alt="..." class="icon-pep rounded-circle">
+                    <div class="d-flex w-100 justify-content-between align-item-center">
+                        <span class="name d-flex align-items-center">Emily Chan</span>
+                        <a href="" class="share w-25 d-flex justify-content-between align-items-center"><span class="primary">Share with</span><b-icon class="primary  m-0" icon="chevron-down"></b-icon></a>
+                    </div>
+                 </div>
                  <b-form @submit.prevent="onSubmit">
                       <b-form-input required class="mb-4" v-model="form.title" placeholder="Post title"></b-form-input>
                       <b-form-textarea  required
@@ -25,7 +32,8 @@
                             rows="3"
                             max-rows="6"
                       ></b-form-textarea>
-                      
+                      <fieldset>
+                      <label>Select Department</label>
                       <select placeholder="Please select Department" required v-model="form.dept" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option selected>Open this select menu</option>
                         <option value="1">Department 1</option>
@@ -33,8 +41,9 @@
                         <option value="3">Department 3</option>
                         <option value="4">Department 4</option>
                      </select>
+                     </fieldset>
                       <div class="d-flex justify-content-end pt-5">
-                          <button @click="hide" class="px-3 py-2 rounded btn-can">Cancel</button>
+                          <button @click="reset" class="px-3 py-2 rounded btn-can">Cancel</button>
                           <button class="px-3 py-2 rounded btn-con">Confirm</button>
                      </div>
                 </b-form>
@@ -55,6 +64,11 @@
             }
         },
         methods: {
+            reset() {
+                this.form.title = '';
+                this.form.content = '';
+                this.form.dept = '';
+            },
             hide() {
                 this.$modal.hide('addpost')
             },
@@ -70,12 +84,7 @@
                     position: "top-right"
                 })
             }, 
-            onSubmit() {
-                // console.log(this.form.title)
-                // console.log(this.form.content)
-                // console.log(this.form.dept)
-                // console.log(new Date().toLocaleString())
-
+            onSubmit() { 
                  const newsfeed = {
                     title: this.form.title,
                     content: this.form.content,
@@ -106,6 +115,25 @@
 }
 #post-modal {
     padding: 40px;
+    .profile-name {
+        margin: 25px 0;
+        .name {
+            margin: {
+                left: 15px;
+            }
+        }
+        .share {
+            text-decoration: none;
+            border: 1px solid #C0C0C0;
+            border-radius: 5px;
+            padding: 0 10px
+        }
+    }
+    fieldset {
+        margin: {
+            top:25px;
+        }
+    }
 }
  .postbar {
      cursor: pointer;

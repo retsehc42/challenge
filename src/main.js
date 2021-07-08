@@ -36,6 +36,9 @@ Vue.component('newsfeed', Newsfeed )
 import Posts  from '@/components/Posts.vue'
 Vue.component('posts', Posts)
 
+import Sidenav  from '@/components/Sidenav.vue'
+Vue.component('sidenav', Sidenav)
+
 // import Drawer  from '@/components/Drawer.vue'
 // Vue.component('drawer', Drawer)
 
