@@ -1,30 +1,31 @@
 <template>
-    <Slide width="500" :crossIcon="false" right isOpen="show" >
-      Chester gonzles {{trig }} 
-    </Slide>
+    <Push>
+      Chester gonzles  
+    </Push>
 </template>
 <script>
-    import { Slide } from 'vue-burger-menu'
-    export default {
-        props:['open'],
-        data() {
-            return {
-                  show: open
-            }
-        },
+    import { Push } from 'vue-burger-menu'
+    export default {  
         components: {
-            Slide // Register your component
+            Push // Register your component
         }
     }
 </script>
-<style lang="scss" scoped>
+<style lang="scss"  >
+@media screen and (max-width: 1200px) {
+        .bm-burger-button {
+           display: block !important;
+        }
+}
 .bm-burger-button {
-      position: fixed;
+      display: none;
+      position: absolute;
       width: 36px;
       height: 30px;
-      left: 36px;
-      top: 36px;
+      left: 85%;
+      top: 15px;
       cursor: pointer;
+      z-index: 2000;
     }
     .bm-burger-bars {
       background-color: #373a47;
@@ -52,7 +53,7 @@
       height: 100%; /* 100% Full-height */
       width: 0; /* 0 width - change this with JavaScript */
       position: fixed; /* Stay in place */
-      z-index: 1000; /* Stay on top */
+      z-index: 2000 !important; /* Stay on top */
       top: 0;
       left: 0;
        /*  background-color: rgb(63, 63, 65); Black*/

@@ -39,8 +39,8 @@ Vue.component('posts', Posts)
 import Sidenav  from '@/components/Sidenav.vue'
 Vue.component('sidenav', Sidenav)
 
-// import Drawer  from '@/components/Drawer.vue'
-// Vue.component('drawer', Drawer)
+import Drawer  from '@/components/Drawer.vue'
+Vue.component('drawer', Drawer)
 
 import VModal from 'vue-js-modal/dist/index.nocss.js'
 import 'vue-js-modal/dist/styles.css'

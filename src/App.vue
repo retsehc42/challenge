@@ -1,6 +1,9 @@
 <template>
   <div id="app"> 
+    <drawer></drawer>
+    <div id="page-wrap">
     <Home />
+    </div>
   </div>
 </template>
 

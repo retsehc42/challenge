@@ -1,5 +1,5 @@
 <template>
-    <div id="sidenav" class="d-md-none d-lg-block d-sm-none d-md-block d-none d-sm-block">
+    <div id="sidenav" class="d-lg-none d-xl-block d-md-none d-lg-block d-sm-none d-md-block d-none d-sm-block">
         <ul class="">
             <li ><a><b-icon class="white h4 m-0" icon="house-door-fill"></b-icon><span class="hov">Home</span></a></li>
             <li><a><b-icon class="white h4 m-0" icon="circle-fill"></b-icon><span class="hov">Engage</span></a></li>

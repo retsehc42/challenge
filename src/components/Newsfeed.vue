@@ -33,7 +33,7 @@
                             max-rows="6"
                       ></b-form-textarea>
                       <fieldset>
-                      <label>Select Department</label>
+                      <label class="primary">Select Department</label>
                       <select placeholder="Please select Department" required v-model="form.dept" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                         <option selected>Open this select menu</option>
                         <option value="1">Department 1</option>
@@ -85,15 +85,20 @@
                 })
             }, 
             onSubmit() { 
+                var str = this.form.content;
+                var blurb = str.substring(0, 100); 
+
                  const newsfeed = {
                     title: this.form.title,
                     content: this.form.content,
                     dept: this.form.dept,
+                    blurb: blurb,
                     date: new Date().toLocaleString()
                 }
                 db.collection('news').add(newsfeed)
                 .then(()=> {  
                     this.post_success()
+                    this.reset();
                     this.hide()
                 })  
             }

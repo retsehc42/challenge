@@ -1,9 +1,5 @@
 <template>
     <div id="posting" class="mb-5">
-         
-        <!-- <Slide width="500" :burgerIcon="false" :crossIcon="false" right :isOpen="open">
-             Chester gonzles  
-        </Slide> -->
         <b-container>
             <b-row>
                 <p class="d-flex justify-content-between align-items-center">
@@ -28,7 +24,6 @@
                                 <span class="white">{{post.date}}</span>
                                 </div> 
                             </slide>
-                             
                         </carousel>
                     </div> 
                 </div>
@@ -37,16 +32,16 @@
                         <div class="post-sub ">
                             <div @click="opencanvas(post)" v-for="post in posts" :key="post.id" :id="post.id" class="post-item border-bottom">
                                 <p class="text-bold mb-2 d-flex justify-content-between items-center">
-                                    <span class="">Department {{post.dept}}</span><span class="showing"><b-icon class="clip" icon="paperclip"></b-icon></span>
+                                    <span class="dept">Department {{post.dept}}</span><span class="showing"><b-icon class="clip" icon="paperclip"></b-icon></span>
                                     <span class="hidden"><b-icon class="pencil" icon="pencil-fill"></b-icon><b-icon class="share" icon="share-fill"></b-icon><b-icon class="arrow" icon="arrow-down-left"></b-icon></span>  
                                 </p>
                                 <p class="title h5 mb-1">
                                     {{post.title}}
                                 </p>
                                 <p class="content_posts">
-                                    {{post.content}}
+                                    {{post.blurb}}
                                 </p>
-                                <span class="gray">2021.05.20, 9:36am {{open}}</span>
+                                <span class="gray">{{post.date}}</span>
                             </div>
                         </div>
                     </div>
@@ -57,19 +52,14 @@
 </template>
 <script> 
     import db from '/fb'
-    //import { Slide } from 'vue-burger-menu'
     export default {
-        components: {
-             // Slide // Register your component
-        },
         data() {
             return {
                 title: '',
                 open: false,
                 posts:[] 
             }
-            
-        },
+        }, 
         created() {
             db.collection('news').orderBy("date", "desc").limit(3).onSnapshot(res => {
             const updates = res.docChanges();
@@ -89,16 +79,23 @@
         }, 
         methods: {
             opencanvas() {
-                // event.preventDefault();
-                // event.stopPropagation();
                 this.open = !this.open;
-                // this.title = post.title;
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+@media screen and (max-width: 992px) {
+         
+           .npl {
+                padding-left: 12px !important;
+            }
+            .npr {
+                padding-right: 12px !important;
+            }
+        
+}
     .slide-item {
         padding: {
             top: 100px;
@@ -126,9 +123,14 @@
                 right: 30px;
             }
         }
-        .post-item {
+        .post-item  {
             padding: {
                 bottom: 30px;
+            }
+            .dept {
+                padding: {
+                    top: 20px;
+                }
             }
             .showing {
                 .clip {
@@ -157,6 +159,9 @@
                     }
                 } 
             }
+            &:hover {
+                background: #F5F8FF;
+            }
         }
         &:hover { 
             .hidden {
@@ -165,7 +170,7 @@
             .showing {
                 display: none;
             }
-            background: #F5F8FF;
+            //background: #F5F8FF;
         }
     }
 </style>

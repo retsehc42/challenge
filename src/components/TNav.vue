@@ -16,6 +16,10 @@
   </b-navbar>
 </div>
 </template>
-<style lang="scss" scoped>
-     
+<style lang="scss" >
+     @media screen and (max-width: 1200px) {
+        .members {
+          display: none !important;
+        }
+     }
 </style>
