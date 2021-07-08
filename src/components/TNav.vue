@@ -5,7 +5,7 @@
         <b-navbar-brand> 
            <img src="@/assets/logo.png">
         </b-navbar-brand>
-        <div class="  w-25 members d-flex justify-content-between align-items-center">
+        <div class=" members d-flex  align-items-center">
             <t-button text="invite members"></t-button>
             <b-icon class="gray h4 m-0" icon="bell-fill"></b-icon>
             <b-icon class="gray h4 m-0" icon="gear-fill"></b-icon>
@@ -17,6 +17,14 @@
 </div>
 </template>
 <style lang="scss" >
+      .members { 
+        width: 350px;
+        img, svg {
+          margin: {
+            left: 20px !important;
+          }
+        }
+      }
      @media screen and (max-width: 1200px) {
         .members {
           display: none !important;

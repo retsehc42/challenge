@@ -22,8 +22,8 @@
       position: absolute;
       width: 36px;
       height: 30px;
-      left: 85%;
-      top: 15px;
+      left: 85% !important;
+      top: 15px !important;
       cursor: pointer;
       z-index: 2000;
     }

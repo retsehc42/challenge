@@ -1,5 +1,5 @@
 <template>
-    <div id="posting" class="mb-5">
+    <div id="posting" class="mb-5"> 
         <b-container>
             <b-row>
                 <p class="d-flex justify-content-between align-items-center">
@@ -19,7 +19,7 @@
                                     {{post.title}}
                                 </p>
                                 <p class="white content_posts">
-                                    {{post.content}}
+                                    {{post.blurb}}
                                 </p>
                                 <span class="white">{{post.date}}</span>
                                 </div> 
@@ -30,7 +30,8 @@
                 <div class="col-lg-5 npl">
                     <div class="posts overflow-auto">
                         <div class="post-sub ">
-                            <div @click="opencanvas(post)" v-for="post in posts" :key="post.id" :id="post.id" class="post-item border-bottom">
+                            <div  v-for="post in posts" :key="post.id" :id="post.id" class="post-item border-bottom" >
+                                 
                                 <p class="text-bold mb-2 d-flex justify-content-between items-center">
                                     <span class="dept">Department {{post.dept}}</span><span class="showing"><b-icon class="clip" icon="paperclip"></b-icon></span>
                                     <span class="hidden"><b-icon class="pencil" icon="pencil-fill"></b-icon><b-icon class="share" icon="share-fill"></b-icon><b-icon class="arrow" icon="arrow-down-left"></b-icon></span>  
@@ -98,7 +99,7 @@
 }
     .slide-item {
         padding: {
-            top: 100px;
+            top: 280px;
             left: 25px;
             right: 25px;
         }

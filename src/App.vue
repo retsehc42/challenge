@@ -60,4 +60,11 @@ export default {
     width: 35px;
     height: 35px;
   }
+  @media (min-width: 1400px) {
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1150px !important;
+    }
+  }
+ 
+
 </style>
